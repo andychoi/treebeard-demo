@@ -32,21 +32,23 @@ A small Django demo showing how to use **django-treebeard**’s `MP_Node` to mod
 1. **Install dependencies**  
    ```bash
    pip install Django django-treebeard
+   ```
 
 	2.	Add to INSTALLED_APPS
-
-INSTALLED_APPS = [
-    # …
-    'treebeard',
-    'your_app_name',  # where these models live
-]
-
+    ```
+    INSTALLED_APPS = [
+        # …
+        'treebeard',
+        'your_app_name',  # where these models live
+    ]
+    ```
 
 	3.	Run migrations
 
-python manage.py makemigrations
-python manage.py migrate
-
+    ```
+    python manage.py makemigrations
+    python manage.py migrate
+    ```
 
 
 ⸻
@@ -54,7 +56,7 @@ python manage.py migrate
 Models Overview
 
 Tower
-
+```
 from treebeard.mp_tree import MP_Node
 
 class Tower(MP_Node, BaseTypeMixin):
@@ -137,14 +139,14 @@ class SimpleGMDMInfo(BaseTypeMixin):
     @property
     def service_type(self):
         return ProjectServiceType.GMDM
-
+```
 
 ⸻
 
 Usage Examples
 
 Building a Tower tree
-
+```
 from your_app.models import Tower
 
 # create a top-level tower
@@ -176,12 +178,12 @@ app = SimpleGMDMInfo.objects.create(
     name='Payment API',
     tower_root=sub,
 )
-
+```
 
 ⸻
 
 Admin Registration
-
+```
 from django.contrib import admin
 from treebeard.admin import TreeAdmin
 from treebeard.forms import movenodeform_factory
@@ -193,7 +195,7 @@ class TowerAdmin(TreeAdmin):
 admin.site.register(Tower, TowerAdmin)
 admin.site.register(Project)
 admin.site.register(SimpleGMDMInfo)
-
+```
 
 ⸻
 

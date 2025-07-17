@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Category Tree</title>
+    <style>ul { list-style: none; padding-left: 0; }</style>
+</head>
+<body>
+    <h1>Category Tree</h1>
+    <ul>
+    {% for node in nodes %}
+        <li style="margin-left: {{ node.depth }}em;">{{ node.name }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

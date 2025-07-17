@@ -22,9 +22,9 @@ class TowerAdmin(TreeAdmin):
     list_display = (
         "code",
         "name",
-        "breakdown_type",
         "level_label",
         "is_active",
+        "breakdown_type",
     )
     list_filter = (
         "breakdown_type",

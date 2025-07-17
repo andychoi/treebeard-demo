@@ -50,6 +50,11 @@ A small Django demo showing how to use **django-treebeard**’s `MP_Node` to mod
     python manage.py migrate
     ```
 
+	4.	Sample data migrations
+
+    ```
+    python manage.py import_towers
+    ```
 
 ⸻
 
